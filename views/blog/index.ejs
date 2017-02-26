@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Wesley's WebDev Blog</title>
+		<% include ../partials/head %>
+    <link rel="stylesheet" href="/stylesheets/blog.css">
+	</head>
+	<body>
+		<% include ../partials/nav %>
+		<header class="intro-header">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <div class="site-heading">
+                      <h1>Wesley's WebDev Blog</h1>
+                      <hr class="small">
+                      <span class="subheading">My Learning Journey in Web Development</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  	</header>
+
+		<div class="container">
+     	<div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <% blogs.reverse().forEach(function(blog){ %>
+          <div class="post-preview">
+            <a href="/blog/<%= blog._id %>">
+              <h2 class="post-title">
+                <%= blog.title %>
+              </h2>
+              <h3 class="post-subtitle">
+              	<%= blog.subtitle %>
+              </h3>
+           	</a>
+            <p class="post-meta">Posted by <a href="#	">Wesley Yu</a> on <%= blog.created.toDateString() %></p>
+          </div>
+  				<hr>
+  			<% }) %>
+      	</div>
+      </div>
+		</div>
+<% include ../partials/footer %>

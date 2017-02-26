@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title><%= blog.title %></title>
+		<% include ../partials/head %>
+		<link rel="stylesheet" href="/stylesheets/show.css">
+	</head>
+	<body>
+		<% include ../partials/nav %>
+		<div class="ui main text container segment">
+		  <div class="ui huge header"><%= blog.title %></div>
+		  <div class="ui top attached segment">
+		    <div class="item">
+		      <img class="ui centered rounded image" src="<%= blog.image %>">
+		      <div class="content">
+		        <span><strong><%= blog.created.toDateString() %></strong></span>
+		      </div>
+		      <hr>
+		      <div class="description">
+		        <p><%- blog.body %></p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+<% include ../partials/footer %>
